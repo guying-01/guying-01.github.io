@@ -229,6 +229,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/js通过位运算实现权限加解密/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何足道">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aries Man">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/21/js通过位运算实现权限加解密/" itemprop="url">js通过位运算实现权限加解密</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T23:54:08+08:00">
+                2019-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="首先介绍一下js中的位运算"><a href="#首先介绍一下js中的位运算" class="headerlink" title="首先介绍一下js中的位运算"></a>首先介绍一下js中的位运算</h5><ul>
+<li>“&amp;” :与运算，转化为二进制数，如果相同位数都为1则得结果为1，否则为0</li>
+<li>“|” :或运算，转化为二进制数，如果相同位数只要有一个为1则得结果为1，否则为0</li>
+<li>“^” :异或运算，转化为二进制数，如果相同位数不同则得结果为1，否则为0</li>
+<li>“&lt;&lt;” 异位运算符，1&lt;&lt;1,表示将1左移一位，也就是010，在二进制中代表2</li>
+</ul>
+<h5 id="十进制数字互相转化"><a href="#十进制数字互相转化" class="headerlink" title="十进制数字互相转化"></a>十进制数字互相转化</h5><ul>
+<li>十进制转为别的进制</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num = 123;</span><br><span class="line">console.log(num.toString(2))</span><br><span class="line">console.log(num.toString(8))//参数传想要转化的位数</span><br></pre></td></tr></table></figure>
+<ul>
+<li>别的进制转化为十进制</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num = 110;</span><br><span class="line">console.log(parseInt(num,2))//二进制转化为十进制</span><br></pre></td></tr></table></figure>
+<p>假设我们现在有5项权限，在二进制中用1代表拥有权限，0代表不拥有。所以11111这样代表拥有所有的五项权限，那么我们如何知道用户是否有某一项具体权限呢。</p>
+<p>比如，我们现在想检测用户是否有第一项权限，我们首先用过异位 1 &lt;&lt; 0,向左移0位，还是1，然后1 &amp; (Math.pow(2,5) -1),</p>
+<p>如果返回0，说明个位对不上，也就是说我们当前没有权限，如果返回1，说明我们拥有第一项权限，同理，如果需要检验第二位权限，只需要异位2就好了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if((1 &lt;&lt; 0) &amp; (Math.pow(2,5) - 1) !== 0)&#123;</span><br><span class="line">    //拥有第一项权限权限</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if((1 &lt;&lt; 1) &amp; (Math.pow(2,5) - 1) !== 0)&#123;</span><br><span class="line">    //拥有第二项权限权限</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面写的是大概原理，可能初次接触有点绕，下面我给大家举几个详细的例子说明：</p>
+<p>首先需要说明的是 1 &lt;&lt; 0，相当于，2的零次方，1&lt;&lt;1，结果是2的一次方，所以上面我用了，Math.pow()这个方法。我们现在来验证一下我们使用上述方法是否能准确的判断权限。</p>
+<p>假设，我们拥有第三项权限，那么就是 1 &lt;&lt; 2，也就是十进制的4，二进制的100，第三位为1，代表有权限，跟我们预想的一致。然后跟2的5次方减1进行与运算，也就是31，结果为4，为什么会得到4呢，因为与运算相同为1，不同为0，也就是结果为00100的二进制数，说明我们拥有第三项权限。</p>
+<ul>
+<li>接下来介绍权限的计算，也就是说我有第一、三项权限，那么代表我权限的值是多少呢。</li>
+</ul>
+<p>我们可以这样计算：</p>
+<p>你拥有第一项，所以应该是1&lt;&lt;1,也就是1，拥有第三项权限，也就是1&lt;&lt;2,也就是4， 2 + 4 =5，5就是代表你权限的数字。</p>
+<p>验证一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1 &lt;&lt; 0</span><br><span class="line">//1</span><br><span class="line">1 &amp; 5</span><br><span class="line">//1  非0,说明拥有第一项权限</span><br><span class="line"></span><br><span class="line">1 &lt;&lt; 2</span><br><span class="line">//4</span><br><span class="line">4 &amp; 5</span><br><span class="line">//4  非0,说明拥有第三项权限</span><br><span class="line"></span><br><span class="line">1 &lt;&lt; 1</span><br><span class="line">//2</span><br><span class="line">2 &amp; 5</span><br><span class="line">//0 为0,说明没有第二项权限</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/php-tp5/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -675,31 +822,31 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">namespace = function()&#123;</span><br><span class="line">  var args = arguments; //函数内部args为参数长度</span><br><span class="line">    for(var i = 0;i&lt;args.length;i++)&#123;    //循环截取参数绑定到window上边</span><br><span class="line">	   var objs = args[i].split(&apos;.&apos;);</span><br><span class="line">	   var obj = window;</span><br><span class="line">	   for(var j = 0;j&lt;objs.length;j++)&#123;</span><br><span class="line">	     obj[objs[j]] = obj[objs[j]] || &#123;&#125;;</span><br><span class="line">	     obj = obj[objs[j]]</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line">	return obj</span><br><span class="line">&#125;</span><br><span class="line">namespace(&quot;gu.base&quot;)//启动方式</span><br></pre></td></tr></table></figure>
 <p>运行完成后，window上边会绑定gu，gu下边有方法base，然后在gu.base上边进行函数扩展。</p>
 <ul>
-<li>base *</li>
+<li>base</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">namespace(&apos;gu.base&apos;);</span><br><span class="line"></span><br><span class="line">(function () &#123;</span><br><span class="line">/**</span><br><span class="line">* 获取传入参数类型</span><br><span class="line">* @param &#123;object&#125; obj</span><br><span class="line">* @return &#123;string&#125;</span><br><span class="line">* @date 2017-11-16</span><br><span class="line">*/</span><br><span class="line">function getParamType (obj) &#123;</span><br><span class="line">return (obj == null ? String(obj) : Object.prototype.toString.call(obj).replace(/\[object\s+(\w+)\]/i,&quot;$1&quot;) || &quot;object&quot;).toLowerCase();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 类似$.extend()</span><br><span class="line">* @param destination</span><br><span class="line">* @param source</span><br><span class="line">* @return &#123;object&#125; destination</span><br><span class="line">* @date 2017-11-16</span><br><span class="line">*/</span><br><span class="line">gu.base.extend = function (destination,source) &#123;</span><br><span class="line">if (destination == null) &#123;</span><br><span class="line">destination = source</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">for (var property in source)&#123;</span><br><span class="line">if (getParamType(source[property]).toLowerCase() === &quot;object&quot; &amp;&amp;</span><br><span class="line">getParamType(destination[property]).toLowerCase() === &quot;object&quot; )</span><br><span class="line">arguments.callee(destination[property], source[property])</span><br><span class="line">else</span><br><span class="line">destination[property] = source[property];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return destination;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gu.base.isArray = function (obj) &#123;</span><br><span class="line">return getParamType(obj) === &quot;array&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gu.base.isObject = function (obj) &#123;</span><br><span class="line">return getParamType(obj) === &quot;object&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gu.base.isFunction = function (obj) &#123;</span><br><span class="line">return getParamType(obj) === &quot;function&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gu.base.isString = function (obj) &#123;</span><br><span class="line">return getParamType(obj) === &quot;string&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gu.base.isBoolean = function (obj) &#123;</span><br><span class="line">return getParamType(obj) === &quot;boolean&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">gu.base.isDate = function (obj) &#123;</span><br><span class="line">return getParamType(obj) === &quot;date&quot;</span><br><span class="line">&#125;;</span><br><span class="line">gu.base.g = function (id) &#123;</span><br><span class="line">return document.getElementById(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;)();</span><br><span class="line">gu.base.extend(window, gu.base);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>date *</li>
+<li>date</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">namespace(&apos;gu.date&apos;);</span><br><span class="line"></span><br><span class="line">extend(gu.date,&#123;</span><br><span class="line">/**</span><br><span class="line">*获取日期，默认日期为今天，默认分隔符为&apos;-&apos;</span><br><span class="line">* @param time</span><br><span class="line">* @returns &#123;string&#125;</span><br><span class="line">* @date 2017-11-21</span><br><span class="line">*/</span><br><span class="line">toDateString:function (time) &#123;</span><br><span class="line">var time = time ? time : new Date(),</span><br><span class="line">m = time.getMonth(),</span><br><span class="line">d = time.getDay(),</span><br><span class="line">y = time.getFullYear(),</span><br><span class="line">separator = arguments[1] ? arguments[1] : &apos;-&apos;;</span><br><span class="line"></span><br><span class="line">return y + separator + (m.toString().length &lt; 2 ? &apos;0&apos; + m : m) +separator +(d.toString().length &lt; 2 ? &apos;0&apos; + d : d);</span><br><span class="line">&#125;,</span><br><span class="line">/**</span><br><span class="line">* 获取日期以及时间，默认日期为今天，默认分隔符为&apos;-&apos;</span><br><span class="line">* @param time</span><br><span class="line">* @returns &#123;string&#125;</span><br><span class="line">* @date 2017-11-21</span><br><span class="line">*/</span><br><span class="line">toDateTimeString:function (time) &#123;</span><br><span class="line">var time = time ? time : new Date(),</span><br><span class="line">h = time.getHours(),</span><br><span class="line">i = time.getMinutes(),</span><br><span class="line">s = time.getSeconds();</span><br><span class="line"></span><br><span class="line">return gu.date.toDateString.apply(this,arguments) + &quot; &quot; + (h.toString().length &lt; 2 ? &apos;0&apos; + h : h)+ &quot;:&quot; + (i.toString().length &lt; 2 ? &apos;0&apos; + i : i)+ &quot;:&quot; + (s.toString().length &lt; 2 ? &apos;0&apos; + s : s);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>load *</li>
+<li>load</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">namespace(&apos;gu.load&apos;);</span><br><span class="line"></span><br><span class="line">extend(gu.load,&#123;</span><br><span class="line">/**</span><br><span class="line">* 加载js</span><br><span class="line">* @param url</span><br><span class="line">* @param callback</span><br><span class="line">* @returns &#123;boolean&#125;</span><br><span class="line">* @date 2017-11-21</span><br><span class="line">*/</span><br><span class="line">loadScript:function (url, callback) &#123;</span><br><span class="line">var head = document.getElementsByTagName(&quot;head&quot;)[0];</span><br><span class="line">var script = document.createElement(&quot;script&quot;);</span><br><span class="line">script.type = &quot;text/javascript&quot;;</span><br><span class="line">script.charset = &apos;GBK&apos;;</span><br><span class="line">script.src = url;</span><br><span class="line">var timeout = setTimeout(</span><br><span class="line">function ()&#123;</span><br><span class="line">head.removeChild(script);</span><br><span class="line">callback.call(this,false);</span><br><span class="line">&#125;,</span><br><span class="line">50</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">script.onload = function () &#123;</span><br><span class="line">head.removeChild(script);</span><br><span class="line">clearTimeout(timeout);</span><br><span class="line">callback();</span><br><span class="line">&#125;;</span><br><span class="line">head.appendChild(script);</span><br><span class="line">return true;</span><br><span class="line">&#125;,</span><br><span class="line">/**</span><br><span class="line">* 加载css</span><br><span class="line">* @param url</span><br><span class="line">* @param callback</span><br><span class="line">* @date 2017-11-21</span><br><span class="line">*/</span><br><span class="line">loadCss:function (url, callback) &#123;</span><br><span class="line">var head = document.getElementsByTagName(&quot;head&quot;)[0];</span><br><span class="line">var link = head.appendChild(</span><br><span class="line">document.createElement(&quot;link&quot;)</span><br><span class="line">);</span><br><span class="line">link.href = url;</span><br><span class="line">link.rel = &apos;stylesheet&apos;;</span><br><span class="line">callback.call(this,true);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">extend(window,gu.load);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>cookie *</li>
+<li>cookie</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">namespace(&apos;gu.cookie&apos;);</span><br><span class="line"></span><br><span class="line">extend(gu.cookie,&#123;</span><br><span class="line">    /**</span><br><span class="line">     * 设置cookie，最好先用navigator.cookieEnable判断一下cookie是否可用</span><br><span class="line">     * @param key</span><br><span class="line">     * @param value</span><br><span class="line">     * @param expires</span><br><span class="line">     * @param domain</span><br><span class="line">     * @param path</span><br><span class="line">     * @returns &#123;boolean&#125;</span><br><span class="line">     */</span><br><span class="line">   set:function (key,value,expires,domain,path) &#123;</span><br><span class="line">       var cValue,cExpires,cDomain,cPath,cookieArr = [];</span><br><span class="line">       if(!key)&#123;</span><br><span class="line">           return false;</span><br><span class="line">       &#125;</span><br><span class="line">       cValue = value ? encodeURIComponent(value) : &apos;&apos;;</span><br><span class="line">       cookieArr.push(key + &quot;=&quot; + cValue);</span><br><span class="line">        if(!isNaN(expires))&#123;</span><br><span class="line">           var time = new Date();</span><br><span class="line">           time.setTime(time.getTime()+(expires*24*60*60*1000));</span><br><span class="line">           cExpires = time.toGMTString();</span><br><span class="line">           cookieArr.push(&apos;expires=&apos; + cExpires);</span><br><span class="line">       &#125;</span><br><span class="line">       if(domain != undefined)&#123;</span><br><span class="line">           cDomain = domain;</span><br><span class="line">           cookieArr.push(&apos;domain=&apos; + cDomain);</span><br><span class="line">       &#125;</span><br><span class="line">       if(path != undefined)&#123;</span><br><span class="line">           cPath = path;</span><br><span class="line">           cookieArr.push(&apos;path=&apos; + cPath);</span><br><span class="line">       &#125;</span><br><span class="line">       document.cookie = cookieArr.join(&apos;; &apos;);</span><br><span class="line">   &#125;,</span><br><span class="line">    /**</span><br><span class="line">     * 获取cookie</span><br><span class="line">     * @param key</span><br><span class="line">     * @returns &#123;string&#125;</span><br><span class="line">     */</span><br><span class="line">   get:function (key) &#123;</span><br><span class="line">       var cookieArr = document.cookie.split(&apos;; &apos;);</span><br><span class="line">       for(var i=0;i&lt;cookieArr.length;i++)&#123;</span><br><span class="line">          if(cookieArr[i].indexOf(key) == 0)&#123;</span><br><span class="line">              return decodeURIComponent(cookieArr[i].substring(cookieArr[i].split(&apos;=&apos;)[0].length + 1,cookieArr[i].length));</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">    /**</span><br><span class="line">     * 清除cookie</span><br><span class="line">     * @param key</span><br><span class="line">     * @param domain</span><br><span class="line">     */</span><br><span class="line">   clear:function (key,domain) &#123;</span><br><span class="line">       var cDate = new Date();</span><br><span class="line">       gu.cookie.set(key,&quot;&quot;,-2,domain);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>string *</li>
+<li>string</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">namespace(&apos;gu.string&apos;);</span><br><span class="line">extend(gu.string,&#123;</span><br><span class="line">    /**</span><br><span class="line">     * 获得字节数，中文2</span><br><span class="line">     * @param str</span><br><span class="line">     * @returns &#123;number&#125;</span><br><span class="line">     */</span><br><span class="line">    getByteLength:function (str) &#123;</span><br><span class="line">        var bytes = 0;</span><br><span class="line">        for(var i=0;i&lt;str.length;i++)&#123;</span><br><span class="line">            if(str.charCodeAt(i) &gt; 255)&#123;</span><br><span class="line">                bytes ++</span><br><span class="line">            &#125;</span><br><span class="line">            bytes ++</span><br><span class="line">        &#125;</span><br><span class="line">        return bytes;</span><br><span class="line">    &#125;,</span><br><span class="line">    /**</span><br><span class="line">     * 去空</span><br><span class="line">     * 数据库中utf-8占三个字符，gbk占俩</span><br><span class="line">     * @param str</span><br><span class="line">     * @returns &#123;XML|string|*&#125;</span><br><span class="line">     */</span><br><span class="line">    trim:function (str) &#123;</span><br><span class="line">        str = str.replace(/\s+$/,&apos;&apos;).replace(/^\s+/,&apos;&apos;);</span><br><span class="line">        return str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>config *</li>
+<li>config</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namespace(&apos;gu.config&apos;);</span><br><span class="line">extend(gu.config,&#123;</span><br><span class="line">    host:&apos;//111.231.54.181&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>ajax通用部分封装 *</li>
+<li>ajax通用部分封装</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(function ($) &#123;</span><br><span class="line">    $.ajaxSetup(&#123;</span><br><span class="line">        dataType:&apos;json&apos;,</span><br><span class="line">        beforeSend:function (xhr) &#123;</span><br><span class="line">            xhr.withCredentials = true;</span><br><span class="line">            commTool.loadingOpen();</span><br><span class="line">        &#125;,</span><br><span class="line">        complete:function () &#123;</span><br><span class="line">            commTool.loadingClose();</span><br><span class="line">        &#125;,</span><br><span class="line">        error:function () &#123;</span><br><span class="line">            commTool.msg(&apos;网络无法连接，请稍后再试。&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
 
@@ -1420,140 +1567,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/angular1入门/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何足道">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aries Man">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/01/angular1入门/" itemprop="url">angular1入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T14:51:13+08:00">
-                2018-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="一些废话"><a href="#一些废话" class="headerlink" title="一些废话"></a>一些废话</h5><p>现在前段行业新技术层出不穷，而很多人都将新技术作为自己求职的敲门砖，比如现在比较流行的框架angular,vue,react;但是他们往往容易忽略最基础的html，css，js；可能你会说那些都简单，但是那些东西是易学不易精。所以只要你基础好，有逻辑思维能力，一切框架都只是工具，你不会只是因为没接触，框架不是难为人的，只是提高你的工作效率。</p>
-<p>但是有时间还是要接触一下，因为没有不好的框架，只有不适合的。</p>
-<h5 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h5><ul>
-<li>ng-app 定义应用程序的根元素，简单来说可以理解为angular的作用域</li>
-<li>ng-bind 绑定数据到元素上，虽然这样的形式也可以，但是如果网速不好的话，它会直接在页面中原样输出，但是ng-bind不会。</li>
-<li>ng-class    动态修改类名                              </li>
-<li>ng-controller 定义控制器对象</li>
-<li>ng-disabled 定义一个元素是否禁用</li>
-<li>ng-click 绑定点击事件</li>
-<li>ng-init 初始化一个变量，类似‘var’</li>
-<li>ng-if 如果后边的表达式为真dom元素才存在</li>
-</ul>
-<p>类似的还有很多，不一一列举</p>
-<p>angular的特点mvvm，双向数据绑定，依赖注入；而这两点都离不开$scope，$scope是连接视图层与数据模型层面的纽带，打个比方 在数据模型层面给$scope绑定一个属性，然后你就可以在html页面里的对应控制器下取到它的属性或方法。 而react是通过操作虚拟dom来工作，它分为三个阶段，插入真是，渲染，移出真实。 所以angular对dom元素的操作比较多，每次渲染都会调用$watch，而随着代码量的壮大，执行速度会越来越慢。 个人感觉angular就是适用一些频繁表单验证、数据增加、删除、更新的场合</p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1604,7 +1617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
