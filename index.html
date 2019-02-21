@@ -229,6 +229,376 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/php-tp5/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何足道">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aries Man">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/21/php-tp5/" itemprop="url">php-tp5</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T23:39:19+08:00">
+                2019-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="开启错误信息，调试模式"><a href="#开启错误信息，调试模式" class="headerlink" title="开启错误信息，调试模式"></a>开启错误信息，调试模式</h5><p>开发的时候可能会出错，但是如果不开启错误信息以及调试模式的话，只会返回页面错误，所以我们可以在application/config.php中开启错误信息以及调试模式，方便开发</p>
+<h5 id="绑定模块"><a href="#绑定模块" class="headerlink" title="绑定模块"></a>绑定模块</h5><p>tp5默认模块为index，所以访问时需要，域名/index.php/模块名/控制器/方法名<br>配置完成后，就不需要输入模块名了，绑定方法如下</p>
+<p>在public/index.php中增加内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;BIND_MODULE&apos;, &apos;index&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>如果你有多个模块,可以新建admin.php等，在里面绑定不同的模块</p>
+<h5 id="绑定扩展"><a href="#绑定扩展" class="headerlink" title="绑定扩展"></a>绑定扩展</h5><p>有时候我们需要封装一些方法，这些方法可以放在extra目录下，但是还需要绑定，同样的，在public/index.php中增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;EXTEND_PATH&apos;,&apos;../extend/&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>然后就可以定义我们自己的类，使用时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use extend下的目录名\类名</span><br></pre></td></tr></table></figure>
+<p>这样就可以了</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/ionic/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何足道">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aries Man">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/21/ionic/" itemprop="url">ionic</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T23:25:03+08:00">
+                2019-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="ts"><a href="#ts" class="headerlink" title="ts"></a>ts</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123;  NavController, NavParams,ModalController,ViewController, LoadingController, ToastController &#125; from &apos;ionic-angular&apos;;</span><br><span class="line">import &#123; LoginPage &#125; from &quot;../login/login&quot;;</span><br><span class="line">import &#123; UserPage &#125; from &quot;../user/user&quot;;</span><br><span class="line">import &#123; Storage &#125; from &quot;@ionic/storage&quot;;</span><br><span class="line">import &#123; BaseUi &#125; from &quot;../../common/baseui&quot;;</span><br><span class="line">import &#123; BookmarkPage &#125; from &quot;../bookmark/bookmark&quot;;</span><br><span class="line">import &#123; RestProvider &#125; from &quot;../../providers/rest/rest&quot;;</span><br><span class="line">import &#123;SettingProvider&#125; from &quot;../../providers/setting/setting&quot;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Generated class for the PersonalCenterPage page.</span><br><span class="line"> *</span><br><span class="line"> * See https://ionicframework.com/docs/components/#navigation for more info on</span><br><span class="line"> * Ionic pages and navigation.</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: &apos;page-personal-center&apos;,</span><br><span class="line">  templateUrl: &apos;personal-center.html&apos;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export class PersonalCenterPage extends BaseUi&#123;</span><br><span class="line">  public notLogin : boolean = true;</span><br><span class="line">  public logined : boolean = false;</span><br><span class="line">  public bookmark:any;</span><br><span class="line">  public font:string;</span><br><span class="line">  public nick_name:string;</span><br><span class="line">  public errorMessage:any;</span><br><span class="line">  public url:string;</span><br><span class="line">  selectedTheme: string;</span><br><span class="line">  constructor(public navCtrl: NavController,</span><br><span class="line">              public navParams: NavParams,</span><br><span class="line">              public modalCtrl : ModalController,</span><br><span class="line">              public viewCtrl:ViewController,</span><br><span class="line">              public loadingCtrl: LoadingController,</span><br><span class="line">              public toastCtrl: ToastController,</span><br><span class="line">              public storage:Storage,</span><br><span class="line">              public rest:RestProvider,</span><br><span class="line">              public settings:SettingProvider) &#123;</span><br><span class="line">    super();</span><br><span class="line">    this.settings.getActiveTheme().subscribe(val =&gt; this.selectedTheme = val);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  changeFonts()&#123;</span><br><span class="line">    this.storage.set(&apos;font&apos;,this.font);</span><br><span class="line">  &#125;</span><br><span class="line">  showModal()&#123;</span><br><span class="line">    let modal = this.modalCtrl.create(LoginPage);</span><br><span class="line">    modal.onDidDismiss(this.getUserInfo);</span><br><span class="line">    modal.present();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  showBookmark()&#123;</span><br><span class="line">    let modal = this.modalCtrl.create(BookmarkPage);</span><br><span class="line">    modal.present();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ionViewDidEnter()&#123;</span><br><span class="line">    this.getUserInfo();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getUserInfo()&#123;</span><br><span class="line">    this.storage.get(&apos;user&apos;).then((f)=&gt;&#123;</span><br><span class="line">      if(f)&#123;</span><br><span class="line">        var loading = super.showLoading(this.loadingCtrl,&apos;加载中...&apos;);</span><br><span class="line">        this.rest.getUerInfo(f).subscribe((val)=&gt;&#123;</span><br><span class="line">          loading.dismiss();</span><br><span class="line">          if(val[&apos;status&apos;] == 0)&#123;</span><br><span class="line">            this.nick_name = val[&apos;msg&apos;][&apos;nick_name&apos;] ?  val[&apos;msg&apos;][&apos;nick_name&apos;] : f;</span><br><span class="line">            this.url = val[&apos;msg&apos;][&apos;upload_time&apos;] ? &apos;http://111.231.54.181/static/uploads/headface/&apos; + val[&apos;msg&apos;][&apos;upload_time&apos;] + &apos;/&apos; + val[&apos;msg&apos;][&apos;url&apos;] : &apos;./assets/imgs/avatar.jpg&apos;;</span><br><span class="line">            this.notLogin = false;</span><br><span class="line">            this.logined = true;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        error =&gt; &#123;</span><br><span class="line">          this.errorMessage = &lt;any&gt;error;</span><br><span class="line">          this.notLogin = true;</span><br><span class="line">          this.logined = false;</span><br><span class="line">          loading.dismiss();</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      else&#123;</span><br><span class="line">        this.notLogin = true;</span><br><span class="line">        this.logined = false;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    //初始化字体</span><br><span class="line">    this.storage.get(&apos;font&apos;).then((f)=&gt;&#123;</span><br><span class="line">      if(f)&#123;</span><br><span class="line">        this.font = f;</span><br><span class="line">      &#125;</span><br><span class="line">      else&#123;</span><br><span class="line">        this.font = &apos;0&apos;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  gotoUserPage()&#123;</span><br><span class="line">    this.navCtrl.push(UserPage);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toggleChangeTheme() &#123;</span><br><span class="line">    if (this.selectedTheme === &apos;dark-theme&apos;) &#123;</span><br><span class="line">      this.settings.setActiveTheme(&apos;light-theme&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">      this.settings.setActiveTheme(&apos;dark-theme&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="html"><a href="#html" class="headerlink" title="html"></a>html</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;ion-header&gt;</span><br><span class="line"></span><br><span class="line">  &lt;ion-navbar&gt;</span><br><span class="line">    &lt;ion-title&gt;更多&lt;/ion-title&gt;</span><br><span class="line">    &lt;/ion-navbar&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ion-header&gt;</span><br><span class="line"></span><br><span class="line">&lt;ion-content&gt;</span><br><span class="line">  &lt;ion-card *ngIf=&quot;notLogin&quot;&gt;</span><br><span class="line">    &lt;ion-card-header text-center&gt;</span><br><span class="line">      登陆 sexybook,体验更多功能</span><br><span class="line">    &lt;/ion-card-header&gt;</span><br><span class="line">    &lt;ion-card-content text-center&gt;</span><br><span class="line">      &lt;button ion-button outline small color=&quot;secondary&quot; (click)=&quot;showModal()&quot;&gt;登陆/注册&lt;/button&gt;</span><br><span class="line">    &lt;/ion-card-content&gt;</span><br><span class="line">  &lt;/ion-card&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;ion-list *ngIf=&quot;logined&quot;&gt;</span><br><span class="line">    &lt;button ion-item (click)=&quot;gotoUserPage()&quot;&gt;</span><br><span class="line">      &lt;ion-avatar item-start&gt;</span><br><span class="line">        &lt;img src=&quot;&#123;&#123;this.url&#125;&#125;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">      &lt;/ion-avatar&gt;</span><br><span class="line">      &lt;h2&gt;&#123;&#123;this.nick_name&#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;查看个人主页或编辑简介&lt;/p&gt;</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">  &lt;/ion-list&gt;</span><br><span class="line"></span><br><span class="line">  &lt;ion-list&gt;</span><br><span class="line">    &lt;ion-list-header&gt;</span><br><span class="line">      设置</span><br><span class="line">    &lt;/ion-list-header&gt;</span><br><span class="line">    &lt;ion-item&gt;</span><br><span class="line">      &lt;ion-icon name=&quot;eye&quot; color=&quot;primary&quot; item-start&gt;&lt;ion-icon&gt;</span><br><span class="line">      &lt;ion-label&gt;夜间模式&lt;/ion-label&gt;</span><br><span class="line">    &lt;ion-toggle (ionChange)=&quot;toggleChangeTheme()&quot;&gt;&lt;/ion-toggle&gt;</span><br><span class="line">    &lt;/ion-item&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ion-item&gt;</span><br><span class="line">      &lt;ion-icon name=&quot;resize&quot; item-start color=&quot;danger&quot;&gt;&lt;/ion-icon&gt;</span><br><span class="line">      &lt;ion-label&gt;字体大小&lt;/ion-label&gt;</span><br><span class="line">      &lt;ion-select [(ngModel)]=&quot;font&quot; cancelText=&quot;取消&quot; okText=&quot;确定&quot; (ngModelChange)=&quot;changeFonts()&quot;&gt;</span><br><span class="line">        &lt;ion-option value=&quot;0&quot;&gt;默认&lt;/ion-option&gt;</span><br><span class="line">        &lt;ion-option value=&quot;1&quot;&gt;中&lt;/ion-option&gt;</span><br><span class="line">        &lt;ion-option value=&quot;2&quot;&gt;大&lt;/ion-option&gt;</span><br><span class="line">      &lt;/ion-select&gt;</span><br><span class="line">    &lt;/ion-item&gt;</span><br><span class="line"></span><br><span class="line">    &lt;button ion-item  (click)=&quot;showBookmark()&quot;&gt;</span><br><span class="line">      &lt;ion-icon name=&quot;pricetag&quot; item-start color=&quot;secondary&quot;&gt;&lt;/ion-icon&gt;</span><br><span class="line">      &lt;ion-label&gt;我的书签&lt;/ion-label&gt;</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">  &lt;/ion-list&gt;</span><br><span class="line"></span><br><span class="line">  &lt;ion-list&gt;</span><br><span class="line">    &lt;ion-list-header&gt;</span><br><span class="line">      关于</span><br><span class="line">    &lt;/ion-list-header&gt;</span><br><span class="line">    &lt;ion-item&gt;</span><br><span class="line">      &lt;ion-icon name=&quot;settings&quot; item-start&gt;&lt;/ion-icon&gt;</span><br><span class="line">      &lt;ion-label item-content&gt;系统版本&lt;/ion-label&gt;</span><br><span class="line">      &lt;p item-end&gt;1.0.0&lt;/p&gt;</span><br><span class="line">    &lt;/ion-item&gt;</span><br><span class="line">  &lt;/ion-list&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ion-content&gt;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/工作中遇到的一些问题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何足道">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aries Man">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/21/工作中遇到的一些问题/" itemprop="url">工作中遇到的一些问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T23:18:12+08:00">
+                2019-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="关于js操作改变input值，不触发onchange事件"><a href="#关于js操作改变input值，不触发onchange事件" class="headerlink" title="关于js操作改变input值，不触发onchange事件"></a>关于js操作改变input值，不触发onchange事件</h5><p>input onchange是失去焦点以后触发的，我们通过js去操作它一直没有获得焦点，也就不会触发。<br>同理，也不会触发oninput，因为oninput是用户修改内容时才会触发。解决方法就是手动调用。</p>
+<h5 id="H5本地上传获取真实路径兼容写法"><a href="#H5本地上传获取真实路径兼容写法" class="headerlink" title="H5本地上传获取真实路径兼容写法"></a>H5本地上传获取真实路径兼容写法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getFileUrl(fileId) &#123; </span><br><span class="line">    var url; </span><br><span class="line">    var file = document.getElementById(fileId);</span><br><span class="line">    var agent = navigator.userAgent;</span><br><span class="line">    if (agent.indexOf(&quot;MSIE&quot;)&gt;=1) &#123;</span><br><span class="line">     url = file.value; </span><br><span class="line">    &#125; else if(agent.indexOf(&quot;Firefox&quot;)&gt;0) &#123; </span><br><span class="line">     url = window.URL.createObjectURL(file.files.item(0)); </span><br><span class="line">    &#125; else if(agent.indexOf(&quot;Chrome&quot;)&gt;0) &#123;</span><br><span class="line">     url = window.URL.createObjectURL(file.files.item(0)); </span><br><span class="line">    &#125; </span><br><span class="line">    return url; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="s对象、数组，改变原数据后新数据也随之改变"><a href="#s对象、数组，改变原数据后新数据也随之改变" class="headerlink" title="s对象、数组，改变原数据后新数据也随之改变"></a>s对象、数组，改变原数据后新数据也随之改变</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&apos;num&apos;:1&#125;;//原数据</span><br><span class="line">var b = a;//假设我们用b来存储</span><br><span class="line">a.num = 2;//对原数据进行一些改变</span><br><span class="line">console.log(b.num);//2</span><br></pre></td></tr></table></figure>
+<p>上面这种方法是达不到我们想要的效果的，因为实际在给b赋值时，是进行了传址操作，也就是说让b跟a指向同一个地址，实际数据只有一份，所以a改变时b也会随之改变。<br>一般的解决方法有深拷贝、转化为字符串。深拷贝可以去我的另一篇JS进阶里面有个extend方法，实际就是循环递归，拷贝一份一模一样的出来，下面简单写一下字符串转化的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&apos;num&apos;:1&#125;;</span><br><span class="line">var b = JSON.stringify(a);</span><br><span class="line">a.num = 2;</span><br><span class="line">console.log(JSON.parse(b.num));//1</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/打造自己的js库/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -332,6 +702,297 @@
 <li>ajax通用部分封装 *</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(function ($) &#123;</span><br><span class="line">    $.ajaxSetup(&#123;</span><br><span class="line">        dataType:&apos;json&apos;,</span><br><span class="line">        beforeSend:function (xhr) &#123;</span><br><span class="line">            xhr.withCredentials = true;</span><br><span class="line">            commTool.loadingOpen();</span><br><span class="line">        &#125;,</span><br><span class="line">        complete:function () &#123;</span><br><span class="line">            commTool.loadingClose();</span><br><span class="line">        &#125;,</span><br><span class="line">        error:function () &#123;</span><br><span class="line">            commTool.msg(&apos;网络无法连接，请稍后再试。&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/vue项目搭建/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何足道">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aries Man">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/13/vue项目搭建/" itemprop="url">vue项目搭建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-13T21:37:52+08:00">
+                2019-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="模仿搭建vue-cli"><a href="#模仿搭建vue-cli" class="headerlink" title="模仿搭建vue-cli"></a>模仿搭建vue-cli</h5><p>其实vue-cli本身就挺好用的，但是毕竟自己亲手搭的还是比较灵活，出了问题也方便解决，所以我们自己动手搭建一个脚手架</p>
+<p>主要用到的工具</p>
+<ul>
+<li>webpack</li>
+<li>webpack-cli</li>
+</ul>
+<p>package.json配置如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;book&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">    &quot;dev&quot;: &quot;cross-env NODE_ENV=development webpack-dev-server&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;cross-env NODE_ENV=production webpack&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;babel-core&quot;: &quot;^6.26.3&quot;,</span><br><span class="line">    &quot;babel-loader&quot;: &quot;^7.1.5&quot;,</span><br><span class="line">    &quot;babel-preset-es2015&quot;: &quot;^6.24.1&quot;,</span><br><span class="line">    &quot;config&quot;: &quot;^3.0.1&quot;,</span><br><span class="line">    &quot;cross-env&quot;: &quot;^5.2.0&quot;,</span><br><span class="line">    &quot;css-loader&quot;: &quot;^2.1.0&quot;,</span><br><span class="line">    &quot;file-loader&quot;: &quot;^3.0.1&quot;,</span><br><span class="line">    &quot;gulp&quot;: &quot;^4.0.0&quot;,</span><br><span class="line">    &quot;html-webpack-plugin&quot;: &quot;^3.2.0&quot;,</span><br><span class="line">    &quot;os&quot;: &quot;^0.1.1&quot;,</span><br><span class="line">    &quot;style-loader&quot;: &quot;^0.23.1&quot;,</span><br><span class="line">    &quot;url-loader&quot;: &quot;^1.1.2&quot;,</span><br><span class="line">    &quot;vue&quot;: &quot;^2.6.6&quot;,</span><br><span class="line">    &quot;vue-loader&quot;: &quot;^15.6.2&quot;,</span><br><span class="line">    &quot;vue-router&quot;: &quot;^3.0.2&quot;,</span><br><span class="line">    &quot;vue-template-compiler&quot;: &quot;^2.6.6&quot;,</span><br><span class="line">    &quot;webpack&quot;: &quot;^4.29.3&quot;,</span><br><span class="line">    &quot;webpack-cli&quot;: &quot;^3.2.3&quot;,</span><br><span class="line">    &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;axios&quot;: &quot;^0.18.0&quot;,</span><br><span class="line">    &quot;element-ui&quot;: &quot;^2.5.4&quot;,</span><br><span class="line">    &quot;qs&quot;: &quot;^6.6.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>webpack.config.js内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">const webpack = require(&apos;webpack&apos;);</span><br><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">const VueLoaderPlugin = require(&apos;vue-loader/lib/plugin&apos;);</span><br><span class="line">const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);</span><br><span class="line">const dev_mode = (process.env.NODE_ENV == &apos;development&apos;);</span><br><span class="line">const config =require(&apos;config&apos;);</span><br><span class="line">const os = require(&apos;os&apos;);</span><br><span class="line"></span><br><span class="line">//获取ip</span><br><span class="line">//注意匹配127.0.0.1的情况</span><br><span class="line">let host = &apos;&apos;;</span><br><span class="line">let obj = os.networkInterfaces();</span><br><span class="line">for (n in obj) &#123;</span><br><span class="line">  obj[n].map(v =&gt; &#123;</span><br><span class="line">    /^[0-9]&#123;1,&#125;\.[0-9]&#123;2,&#125;\.[0-9]&#123;1,&#125;\.[0-9]&#123;1,&#125;$/.test(v.address) &amp;&amp; (host = v.address)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry:path.join(__dirname,&apos;src/main.js&apos;),</span><br><span class="line">    output:&#123;</span><br><span class="line">        filename:&apos;index.js&apos;,</span><br><span class="line">        path:path.resolve(__dirname,&apos;dist&apos;)</span><br><span class="line">    &#125;,</span><br><span class="line">    mode: dev_mode ? &apos;development&apos; : &apos;production&apos;,</span><br><span class="line">    module:&#123;</span><br><span class="line">        rules:[</span><br><span class="line">            &#123;</span><br><span class="line">                test: /\.js$/,</span><br><span class="line">                exclude: /node_modules/,</span><br><span class="line">                loader: &apos;babel-loader&apos;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: /\.vue$/,</span><br><span class="line">                loader:&apos;vue-loader&apos;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: /\.css$/,</span><br><span class="line">                use: [&apos;style-loader&apos;, &apos;css-loader&apos;]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: /\.(gif|jpg|jpeg|woff(2)?|ttf|eot|svg)/,</span><br><span class="line">                use: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        loader: &apos;url-loader&apos;,</span><br><span class="line">                        options: &#123;</span><br><span class="line">                            limit: 1024,</span><br><span class="line">                            name: &apos;[name].[hash:6].[ext]&apos;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: path.join(__dirname,&apos;src&apos;),</span><br><span class="line">        watchContentBase: true,</span><br><span class="line">        hot: true,</span><br><span class="line">        port: config.port,</span><br><span class="line">        host: &apos;0.0.0.0&apos;,</span><br><span class="line">        proxy: &#123;</span><br><span class="line">          &apos;/index.php&apos;: &#123;</span><br><span class="line">              target:&quot;http://guying.club&quot;,</span><br><span class="line">              changeOrigin: true,</span><br><span class="line">              secure: false, </span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">    plugins:[</span><br><span class="line">        new VueLoaderPlugin(),</span><br><span class="line">        new HtmlWebpackPlugin(),</span><br><span class="line">    ]    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(dev_mode)&#123;</span><br><span class="line">    module.exports.plugins = module.exports.plugins.concat([</span><br><span class="line">        new webpack.HotModuleReplacementPlugin(),</span><br><span class="line">        new webpack.DefinePlugin(&#123;</span><br><span class="line">            &apos;LOCAL_ADDRESS&apos;: JSON.stringify(`http://$&#123;host&#125;:$&#123;config.port&#125;`)</span><br><span class="line">          &#125;)   </span><br><span class="line">    ])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后是自己封装的axios请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">/**axios封装</span><br><span class="line"> * 请求拦截、相应拦截、错误统一处理</span><br><span class="line"> */</span><br><span class="line">import axios from &apos;axios&apos;;</span><br><span class="line">import QS from &apos;qs&apos;;</span><br><span class="line"></span><br><span class="line">// 环境的切换</span><br><span class="line">if (process.env.NODE_ENV == &apos;development&apos;) &#123;    </span><br><span class="line">    axios.defaults.baseURL = LOCAL_ADDRESS;</span><br><span class="line">&#125; else if (process.env.NODE_ENV == &apos;debug&apos;) &#123;    </span><br><span class="line">    axios.defaults.baseURL = &apos;&apos;;</span><br><span class="line">&#125; else if (process.env.NODE_ENV == &apos;production&apos;) &#123;    </span><br><span class="line">    axios.defaults.baseURL = &apos;&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 请求超时时间</span><br><span class="line">axios.defaults.timeout = 10000;</span><br><span class="line"></span><br><span class="line">// post请求头</span><br><span class="line">axios.defaults.headers.post[&apos;Content-Type&apos;] = &apos;application/x-www-form-urlencoded;charset=UTF-8&apos;;</span><br><span class="line"></span><br><span class="line">// 请求拦截器</span><br><span class="line">axios.interceptors.request.use(    </span><br><span class="line">    config =&gt; &#123;</span><br><span class="line">        // 每次发送请求之前判断是否存在token，如果存在，则统一在http请求的header都加上token，不用每次请求都手动添加了</span><br><span class="line">        // 即使本地存在token，也有可能token是过期的，所以在响应拦截器中要对返回状态进行判断</span><br><span class="line">        return config;</span><br><span class="line">    &#125;,    </span><br><span class="line">    error =&gt; &#123;        </span><br><span class="line">        return Promise.error(error);    </span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">// 响应拦截器</span><br><span class="line">axios.interceptors.response.use(    </span><br><span class="line">    response =&gt; &#123;     </span><br><span class="line">        if (response.status === 200) &#123;    </span><br><span class="line">            return Promise.resolve(response);        </span><br><span class="line">        &#125; else &#123;            </span><br><span class="line">            return Promise.reject(response);        </span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;,</span><br><span class="line">    //服务器状态码不是200的情况    </span><br><span class="line">    error =&gt; &#123;        </span><br><span class="line">        if (error.response &amp;&amp; error.response.status) &#123;            </span><br><span class="line">            switch (error.response.status) &#123;                </span><br><span class="line">                // 401: 未登录                </span><br><span class="line">                // 未登录则跳转登录页面，并携带当前页面的路径                </span><br><span class="line">                // 在登录成功后返回当前页面，这一步需要在登录页操作。                </span><br><span class="line">                case 401:                    </span><br><span class="line">                    router.replace(&#123;                        </span><br><span class="line">                        path: &apos;/login&apos;,                        </span><br><span class="line">                        query: &#123; redirect: router.currentRoute.fullPath &#125; </span><br><span class="line">                    &#125;);</span><br><span class="line">                    break;</span><br><span class="line">                // 403 token过期                </span><br><span class="line">                // 登录过期对用户进行提示                </span><br><span class="line">                // 清除本地token和清空vuex中token对象                </span><br><span class="line">                // 跳转登录页面                </span><br><span class="line">                case 403:                     </span><br><span class="line">                    Toast(&#123;                        </span><br><span class="line">                        message: &apos;登录过期，请重新登录&apos;,                        </span><br><span class="line">                        duration: 1000,                        </span><br><span class="line">                        forbidClick: true                    </span><br><span class="line">                    &#125;);                    </span><br><span class="line">                    // 清除token                    </span><br><span class="line">                    localStorage.removeItem(&apos;token&apos;);                    </span><br><span class="line">                    store.commit(&apos;loginSuccess&apos;, null);                    </span><br><span class="line">                    // 跳转登录页面，并将要浏览的页面fullPath传过去，登录成功后跳转需要访问的页面</span><br><span class="line">                    setTimeout(() =&gt; &#123;                        </span><br><span class="line">                        router.replace(&#123;                            </span><br><span class="line">                            path: &apos;/login&apos;,                            </span><br><span class="line">                            query: &#123; </span><br><span class="line">                                redirect: router.currentRoute.fullPath </span><br><span class="line">                            &#125;                        </span><br><span class="line">                        &#125;);                    </span><br><span class="line">                    &#125;, 1000);                    </span><br><span class="line">                    break; </span><br><span class="line">                // 404请求不存在                </span><br><span class="line">                case 404:                    </span><br><span class="line">                    Toast(&#123;                        </span><br><span class="line">                        message: &apos;网络请求不存在&apos;,                        </span><br><span class="line">                        duration: 1500,                        </span><br><span class="line">                        forbidClick: true                    </span><br><span class="line">                    &#125;);                    </span><br><span class="line">                break;                </span><br><span class="line">                // 其他错误，直接抛出错误提示                </span><br><span class="line">                default:                    </span><br><span class="line">                    Toast(&#123;                        </span><br><span class="line">                        message: error.response.data.message,                        </span><br><span class="line">                        duration: 1500,                        </span><br><span class="line">                        forbidClick: true                    </span><br><span class="line">                    &#125;);            </span><br><span class="line">            &#125;            </span><br><span class="line">            return Promise.reject(error.response);        </span><br><span class="line">        &#125;       </span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line">/** </span><br><span class="line"> * get方法，对应get请求 </span><br><span class="line"> * @param &#123;String&#125; url [请求的url地址] </span><br><span class="line"> * @param &#123;Object&#125; params [请求时携带的参数] </span><br><span class="line"> */</span><br><span class="line">export function get(url, params)&#123;    </span><br><span class="line">    return new Promise((resolve, reject) =&gt;&#123;        </span><br><span class="line">        axios.get(url, &#123;            </span><br><span class="line">            params: params        </span><br><span class="line">        &#125;)        </span><br><span class="line">        .then(res =&gt; &#123;            </span><br><span class="line">            resolve(res.data);        </span><br><span class="line">        &#125;)        </span><br><span class="line">        .catch(err =&gt; &#123;            </span><br><span class="line">            reject(err.data)        </span><br><span class="line">        &#125;)    </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">/** </span><br><span class="line"> * post方法，对应post请求 </span><br><span class="line"> * @param &#123;String&#125; url [请求的url地址] </span><br><span class="line"> * @param &#123;Object&#125; params [请求时携带的参数] </span><br><span class="line"> */</span><br><span class="line">export function post(url, params) &#123;    </span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;         </span><br><span class="line">        axios.post(url, QS.stringify(params))        </span><br><span class="line">        .then(res =&gt; &#123;            </span><br><span class="line">            resolve(res.data);        </span><br><span class="line">        &#125;)        </span><br><span class="line">        .catch(err =&gt; &#123;     </span><br><span class="line">            reject(err.data)        </span><br><span class="line">        &#125;)    </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>初步搭建完成，可以使用了</li>
+<li>如果有问题，后续补充</li>
+</ul>
+<h5 id="使用了vue-router后页面地址栏路径改变后刷新页面报错"><a href="#使用了vue-router后页面地址栏路径改变后刷新页面报错" class="headerlink" title="使用了vue-router后页面地址栏路径改变后刷新页面报错"></a>使用了vue-router后页面地址栏路径改变后刷新页面报错</h5><p>这个主要时由于设置了vue-router为history模式，找不到路由下面的index.html页面，解决方式为配置nginx服务器的try_files,<br>本地解决方式为配置webpack-dev-server，增加 -history-api-fallback</p>
+<h5 id="使用vue-router以后地址栏改变找不到静态资源"><a href="#使用vue-router以后地址栏改变找不到静态资源" class="headerlink" title="使用vue-router以后地址栏改变找不到静态资源"></a>使用vue-router以后地址栏改变找不到静态资源</h5><p>配置webpack&gt;output&gt;publicPath:’/‘</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/vscode/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何足道">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aries Man">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/24/vscode/" itemprop="url">vscode</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-24T21:03:35+08:00">
+                2018-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="设置终端为gitbash"><a href="#设置终端为gitbash" class="headerlink" title="设置终端为gitbash"></a>设置终端为gitbash</h5><p>可能有的同学使用linux指令习惯了，所以使用powershell时感觉不是很方便，我们可以设置一下终端为gitbash就可以愉快的使用linux指令了</p>
+<ul>
+<li>首先打开设置，然后搜索shell</li>
+<li>然后找到这一列terminal.integrated.shellArgs.windows</li>
+<li>打击编辑setting.json</li>
+<li>然后你就会发现里面有powershell的配置路径，对应换成git目录下的/bin/bash.exe就可以了</li>
+</ul>
+<h5 id="自定义ll指令"><a href="#自定义ll指令" class="headerlink" title="自定义ll指令"></a>自定义ll指令</h5><ul>
+<li>vim ~/.bashrc</li>
+<li>输入alias ll= “ls -l”</li>
+<li>:wq保存并退出</li>
+<li>source ~/.bashrc //激活指令</li>
+</ul>
+<h5 id="vscode一些比较好用的插件"><a href="#vscode一些比较好用的插件" class="headerlink" title="vscode一些比较好用的插件"></a>vscode一些比较好用的插件</h5><ul>
+<li>vscode的强大之处就是各种各样的插件，需要什么就找什么</li>
+</ul>
+<ul>
+<li>chinese //中文简体</li>
+<li>Auto Close Tag //自动闭合标签</li>
+<li>Auto Rename Tag //重命名标签</li>
+<li>Live Server  //启动本地服务，打开静态页面</li>
+</ul>
+<ul>
+<li>一些常用的配置<br>{<br>  “protocol”: “sftp”,<br>  “host”: “服务器地址”,<br>  “port”: 22,<br>  “username”: “username”,<br>  “password”: “password”,<br>  “uploadOnSave”: true,//保存后自动上传<br>  “remotePath”: “要上传的地址”,<br>  //要忽略的文件<br>  “ignore”: [<pre><code>&quot;.vscode&quot;,
+&quot;.git&quot;,
+&quot;.DS_Store&quot;,
+&quot;**/node_modules&quot;
+</code></pre>  ]<br>}</li>
+</ul>
+<ul>
+<li>Path Autocomplete //路径智能提示</li>
+<li>PHP IntelliSense  //支持很多php功能，最好用的就是可以启动本地服务，直接调试php页面，不过需要配置php执行文件路径</li>
+<li>sftp  </li>
+<li>tp5  //tp5框架智能提示</li>
+<li>Vetur  //适用于vue框架</li>
+</ul>
 
           
         
@@ -896,6 +1557,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -939,7 +1604,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -952,7 +1617,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
