@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aries Man">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="随着code经验的增加，函数封装，可复用性组件开发可以说是一个水到渠成的过程，最近一直想写一个属于自己的js库，将自己用的较多的组件都放在里面，但是也一直被搁置，因为我感觉自己目前能力可能不够，但是不试试怎么知道呢。只要尝试，就算不成功，对自己也是宝贵的经验。 万事开头难，这一步很关键，使用命名空间避免冲突，将方法绑定到window上。ps：能有今天的成长，大部分归功于前辈们的代码通过解读能学到很">
+<meta property="og:type" content="article">
+<meta property="og:title" content="打造自己的js库">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/打造自己的js库/index.html">
 <meta property="og:site_name" content="Aries Man">
+<meta property="og:description" content="随着code经验的增加，函数封装，可复用性组件开发可以说是一个水到渠成的过程，最近一直想写一个属于自己的js库，将自己用的较多的组件都放在里面，但是也一直被搁置，因为我感觉自己目前能力可能不够，但是不试试怎么知道呢。只要尝试，就算不成功，对自己也是宝贵的经验。 万事开头难，这一步很关键，使用命名空间避免冲突，将方法绑定到window上。ps：能有今天的成长，大部分归功于前辈们的代码通过解读能学到很">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-21T14:44:05.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aries Man">
+<meta name="twitter:title" content="打造自己的js库">
+<meta name="twitter:description" content="随着code经验的增加，函数封装，可复用性组件开发可以说是一个水到渠成的过程，最近一直想写一个属于自己的js库，将自己用的较多的组件都放在里面，但是也一直被搁置，因为我感觉自己目前能力可能不够，但是不试试怎么知道呢。只要尝试，就算不成功，对自己也是宝贵的经验。 万事开头难，这一步很关键，使用命名空间避免冲突，将方法绑定到window上。ps：能有今天的成长，大部分归功于前辈们的代码通过解读能学到很">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/21/打造自己的js库/">
 
 
 
 
 
-  <title>Aries Man</title>
+  <title>打造自己的js库 | Aries Man</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/21/打造自己的js库/" itemprop="url">打造自己的js库</a></h1>
+          <h1 class="post-title" itemprop="name headline">打造自己的js库</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <p>随着code经验的增加，函数封装，可复用性组件开发可以说是一个水到渠成的过程，最近一直想写一个属于自己的js库，将自己用的较多的组件都放在里面，但是也一直被搁置，因为我感觉自己目前能力可能不够，但是不试试怎么知道呢。只要尝试，就算不成功，对自己也是宝贵的经验。</p>
+        <p>随着code经验的增加，函数封装，可复用性组件开发可以说是一个水到渠成的过程，最近一直想写一个属于自己的js库，将自己用的较多的组件都放在里面，但是也一直被搁置，因为我感觉自己目前能力可能不够，但是不试试怎么知道呢。只要尝试，就算不成功，对自己也是宝贵的经验。</p>
 <p>万事开头难，这一步很关键，使用命名空间避免冲突，将方法绑定到window上。ps：能有今天的成长，大部分归功于前辈们的代码通过解读能学到很多东西，感谢！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">namespace = function()&#123;</span><br><span class="line">  var args = arguments; //函数内部args为参数长度</span><br><span class="line">    for(var i = 0;i&lt;args.length;i++)&#123;    //循环截取参数绑定到window上边</span><br><span class="line">	   var objs = args[i].split(&apos;.&apos;);</span><br><span class="line">	   var obj = window;</span><br><span class="line">	   for(var j = 0;j&lt;objs.length;j++)&#123;</span><br><span class="line">	     obj[objs[j]] = obj[objs[j]] || &#123;&#125;;</span><br><span class="line">	     obj = obj[objs[j]]</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line">	return obj</span><br><span class="line">&#125;</span><br><span class="line">namespace(&quot;gu.base&quot;)//启动方式</span><br></pre></td></tr></table></figure>
 <p>运行完成后，window上边会绑定gu，gu下边有方法base，然后在gu.base上边进行函数扩展。</p>
@@ -333,8 +332,6 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(function ($) &#123;</span><br><span class="line">    $.ajaxSetup(&#123;</span><br><span class="line">        dataType:&apos;json&apos;,</span><br><span class="line">        beforeSend:function (xhr) &#123;</span><br><span class="line">            xhr.withCredentials = true;</span><br><span class="line">            commTool.loadingOpen();</span><br><span class="line">        &#125;,</span><br><span class="line">        complete:function () &#123;</span><br><span class="line">            commTool.loadingClose();</span><br><span class="line">        &#125;,</span><br><span class="line">        error:function () &#123;</span><br><span class="line">            commTool.msg(&apos;网络无法连接，请稍后再试。&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -351,144 +348,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/es6/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何足道">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aries Man">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/01/es6/" itemprop="url">es6</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T16:31:31+08:00">
-                2018-12-01
-              </time>
+              <a href="/2018/12/01/es6/" rel="next" title="es6">
+                <i class="fa fa-chevron-left"></i> es6
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h5 id="函数默认参数设置"><a href="#函数默认参数设置" class="headerlink" title="函数默认参数设置"></a>函数默认参数设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function test(num = 1)&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>如果不传参数，那么num默认为1，相当于</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function test(num)&#123;</span><br><span class="line">    num = num || 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="let、const"><a href="#let、const" class="headerlink" title="let、const"></a>let、const</h5><p>let 的出现是为了弥补原生js没有块作用域，只有函数作用域，我们为了不污染全局变量所以采用面向对象的编程方式；使用node也有这方面的原因。 比如上边例子中，let所在区域被称为死区，这一区域完全不受外部影响,所以我们可以把代码写成一块一块互不影响，不用害怕以前使用’var’要考虑作用域以及冲突； 但是使用过程中有几点值得注意，那就是如果重复声明会报错，在声明之前使用也会报错，因为它不存在变量提升</p>
-<p>const是为了声明一个常量，不可改变，准确的说是不能改变它的指向的那个内存地址</p>
-<h5 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class getData&#123;</span><br><span class="line">	constructor(name)&#123;</span><br><span class="line">		this.name=name;</span><br><span class="line">	&#125;</span><br><span class="line">	static plus(name)&#123;</span><br><span class="line">		return name+&apos;2&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	 start()&#123;</span><br><span class="line">        //do some thing</span><br><span class="line">        this.ajaxData()</span><br><span class="line">        let final=getData.plus(result);</span><br><span class="line">        </span><br><span class="line">	&#125;</span><br><span class="line">	 ajaxData()&#123;</span><br><span class="line">		let param=&#123;&#125;;</span><br><span class="line">		param.length=10;</span><br><span class="line">		$.post(&apos;url&apos;,param,function(data)&#123;</span><br><span class="line">			console.log(data)</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let gy=new getData;</span><br><span class="line">gy.start();</span><br></pre></td></tr></table></figure>
-<p>它的原理就是面向对象的编程模式；比如this.ajaxData等同于this.prototype.ajaxData;同样都是在它的原型链上边添加方法或属性；class里面的this一直指向例化它的对象； 但是如果是函数里边的另一个函数，这个时候this就不在指向实例化对象，比如上边的$.post;这个时候我们需要把’.bind(this)’写在$.post后边来改变指针。 </p>
-<p>constructor是将属性绑定在this上边; </p>
-<p>如果一个函数前边写 static ，那么就是指明它是一个静态函数，一般来说都是把一些封装好的方法写成静态函数，比如一些运算或者数据处理等，静态函数只能由class本身调用</p>
-<h5 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let test=function(num)&#123;</span><br><span class="line">		return num*num;</span><br><span class="line">	&#125;</span><br><span class="line">let test=num=&gt;num*num</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">箭头函数的优势就是简洁方便，不过除了短它还是有优势的，比如它的this也是绑定作用域，准确来说就是它所在的作用域，而不是我们 一般的谁调用指向谁</span><br><span class="line"></span><br><span class="line">注意：如果没有参数或者多个参数，那么你需要将参数放在小括号里面，如果不仅仅有一步操作，那么需要把操作放在对象里边。如果需要返回一个对象，需要用小括号包起来， 因为es6会将‘&#123;’解析为块的开始</span><br><span class="line"></span><br><span class="line">##### map,set</span><br></pre></td></tr></table></figure>
-<p>数组去重<br>const set=new Set([1,1,2,3,3,4,5])<br>console.log([…set])  //1,2,3,4,5<br>属性：size<br>方法：add,delete,has<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### async</span><br><span class="line"></span><br><span class="line">相当于使用jQuery的这种写法</span><br></pre></td></tr></table></figure></p>
-<p>let requests = [];<br>requests.push($.getJSON(url));<br>requests.push($.getJSON(url1));<br>$.when().apply(this,requests).done(function(data){<br>    console.log(data)<br>})<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">async function test()&#123;</span><br><span class="line"></span><br><span class="line">   return new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">          setTimeout(()=&gt;&#123;</span><br><span class="line">              resolve(&apos;呵呵哒&apos;);</span><br><span class="line">          &#125;)</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">返回一个promise对象，我们可以这样处理</span><br></pre></td></tr></table></figure></p>
-<p>test().then(v=&gt;{<br>    console.log(v);<br>})<br><code>`</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -498,404 +379,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/git/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何足道">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aries Man">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/01/git/" itemprop="url">git</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T16:25:46+08:00">
-                2018-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="初次安装后需全局设置用户名及email"><a href="#初次安装后需全局设置用户名及email" class="headerlink" title="初次安装后需全局设置用户名及email"></a>初次安装后需全局设置用户名及email</h5><p><code>git config --global --list</code></p>
-<p>列出当前全局系统配置，如果需要列举当前仓库的配置，可以吧global更换为local</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your name&quot;</span><br><span class="line">git config --global user.email &quot;your email address&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="reset"><a href="#reset" class="headerlink" title="reset"></a>reset</h5><p><code>git log</code></p>
-<p>打印出log后按Q退出，log里面会有hash字符串，复制以后git reset hasn字符串，可撤销操作。</p>
-<h5 id="git-ignore"><a href="#git-ignore" class="headerlink" title="git ignore"></a>git ignore</h5><p>在git目录下新建 .gitgnore文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/node_modules/</span><br><span class="line">!/node_modules/test/    //node_modules里面只有test文件夹正常提交</span><br></pre></td></tr></table></figure>
-<h5 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h5><p>新建分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch test</span><br></pre></td></tr></table></figure></p>
-<p>切换分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout test</span><br></pre></td></tr></table></figure></p>
-<p>分支合并</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge test</span><br></pre></td></tr></table></figure>
-<p>拉取指定分支代码</p>
-<p><code>git pull origin test</code></p>
-<p>推送指定分支代码</p>
-<p><code>git push origin test</code></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/cordova热更新/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何足道">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aries Man">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/01/cordova热更新/" itemprop="url">cordova热更新</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T16:19:07+08:00">
-                2018-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="热更新原理"><a href="#热更新原理" class="headerlink" title="热更新原理"></a>热更新原理</h5><p>通过添加热更新插件生成当前文件时间戳，程序启动后与服务器代码进行比较，如果服务器时间戳大于app时间戳，就从服务器下载文件， 实现自动更新。</p>
-<h5 id="安装Cordova-hcp-Cli"><a href="#安装Cordova-hcp-Cli" class="headerlink" title="安装Cordova-hcp Cli"></a>安装Cordova-hcp Cli</h5><p><code>npm install cordova-hot-code-push-cli -g</code></p>
-<h5 id="安装Cordova-hcp-插件"><a href="#安装Cordova-hcp-插件" class="headerlink" title="安装Cordova-hcp 插件"></a>安装Cordova-hcp 插件</h5><p><code>cordova plugin add cordova-hot-code-push-plugin</code></p>
-<h5 id="配置cordova-hcp-json文件"><a href="#配置cordova-hcp-json文件" class="headerlink" title="配置cordova-hcp.json文件"></a>配置cordova-hcp.json文件</h5><p>在项目根目录新建文件cordova-hcp.json</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;autogenerated&quot;: true,</span><br><span class="line">  &quot;content_url&quot;: &quot;http://192.168.31.112/www&quot;,  //服务器路径</span><br><span class="line">  &quot;update&quot;: &quot;start&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="配置config-xml文件"><a href="#配置config-xml文件" class="headerlink" title="配置config.xml文件"></a>配置config.xml文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;chcp&gt;</span><br><span class="line">   &lt;auto-download enabled=&quot;true&quot; /&gt;</span><br><span class="line">   &lt;auto-install enabled=&quot;true&quot; /&gt;</span><br><span class="line">   &lt;config-file url=&quot;http://172.16.1.245:8080/cordova-hot-update/cordova/www/chcp.json&quot; /&gt;</span><br><span class="line">&lt;/chcp&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h5><p><code>cordova-hcp build</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/angular1入门/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何足道">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aries Man">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/01/angular1入门/" itemprop="url">angular1入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T14:51:13+08:00">
-                2018-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="一些废话"><a href="#一些废话" class="headerlink" title="一些废话"></a>一些废话</h5><p>现在前段行业新技术层出不穷，而很多人都将新技术作为自己求职的敲门砖，比如现在比较流行的框架angular,vue,react;但是他们往往容易忽略最基础的html，css，js；可能你会说那些都简单，但是那些东西是易学不易精。所以只要你基础好，有逻辑思维能力，一切框架都只是工具，你不会只是因为没接触，框架不是难为人的，只是提高你的工作效率。</p>
-<p>但是有时间还是要接触一下，因为没有不好的框架，只有不适合的。</p>
-<h5 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h5><ul>
-<li>ng-app 定义应用程序的根元素，简单来说可以理解为angular的作用域</li>
-<li>ng-bind 绑定数据到元素上，虽然这样的形式也可以，但是如果网速不好的话，它会直接在页面中原样输出，但是ng-bind不会。</li>
-<li>ng-class    动态修改类名                              </li>
-<li>ng-controller 定义控制器对象</li>
-<li>ng-disabled 定义一个元素是否禁用</li>
-<li>ng-click 绑定点击事件</li>
-<li>ng-init 初始化一个变量，类似‘var’</li>
-<li>ng-if 如果后边的表达式为真dom元素才存在</li>
-</ul>
-<p>类似的还有很多，不一一列举</p>
-<p>angular的特点mvvm，双向数据绑定，依赖注入；而这两点都离不开$scope，$scope是连接视图层与数据模型层面的纽带，打个比方 在数据模型层面给$scope绑定一个属性，然后你就可以在html页面里的对应控制器下取到它的属性或方法。 而react是通过操作虚拟dom来工作，它分为三个阶段，插入真是，渲染，移出真实。 所以angular对dom元素的操作比较多，每次渲染都会调用$watch，而随着代码量的壮大，执行速度会越来越慢。 个人感觉angular就是适用一些频繁表单验证、数据增加、删除、更新的场合</p>
-<hr>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -903,6 +391,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1108,6 +600,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
