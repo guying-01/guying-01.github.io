@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Aries Man">
 <meta property="og:description" content="开启错误信息，调试模式开发的时候可能会出错，但是如果不开启错误信息以及调试模式的话，只会返回页面错误，所以我们可以在application/config.php中开启错误信息以及调试模式，方便开发 绑定模块tp5默认模块为index，所以访问时需要，域名/index.php/模块名/控制器/方法名配置完成后，就不需要输入模块名了，绑定方法如下 在public/index.php中增加内容1defi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-21T15:39:38.514Z">
+<meta property="og:updated_time" content="2019-02-21T16:03:41.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php-tp5">
 <meta name="twitter:description" content="开启错误信息，调试模式开发的时候可能会出错，但是如果不开启错误信息以及调试模式的话，只会返回页面错误，所以我们可以在application/config.php中开启错误信息以及调试模式，方便开发 绑定模块tp5默认模块为index，所以访问时需要，域名/index.php/模块名/控制器/方法名配置完成后，就不需要输入模块名了，绑定方法如下 在public/index.php中增加内容1defi">
@@ -300,11 +300,11 @@
       
 
       
-        <h5 id="开启错误信息，调试模式"><a href="#开启错误信息，调试模式" class="headerlink" title="开启错误信息，调试模式"></a>开启错误信息，调试模式</h5><p>开发的时候可能会出错，但是如果不开启错误信息以及调试模式的话，只会返回页面错误，所以我们可以在application/config.php中开启错误信息以及调试模式，方便开发</p>
-<h5 id="绑定模块"><a href="#绑定模块" class="headerlink" title="绑定模块"></a>绑定模块</h5><p>tp5默认模块为index，所以访问时需要，域名/index.php/模块名/控制器/方法名<br>配置完成后，就不需要输入模块名了，绑定方法如下</p>
+        <h4 id="开启错误信息，调试模式"><a href="#开启错误信息，调试模式" class="headerlink" title="开启错误信息，调试模式"></a>开启错误信息，调试模式</h4><p>开发的时候可能会出错，但是如果不开启错误信息以及调试模式的话，只会返回页面错误，所以我们可以在application/config.php中开启错误信息以及调试模式，方便开发</p>
+<h4 id="绑定模块"><a href="#绑定模块" class="headerlink" title="绑定模块"></a>绑定模块</h4><p>tp5默认模块为index，所以访问时需要，域名/index.php/模块名/控制器/方法名<br>配置完成后，就不需要输入模块名了，绑定方法如下</p>
 <p>在public/index.php中增加内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;BIND_MODULE&apos;, &apos;index&apos;);</span><br></pre></td></tr></table></figure></p>
 <p>如果你有多个模块,可以新建admin.php等，在里面绑定不同的模块</p>
-<h5 id="绑定扩展"><a href="#绑定扩展" class="headerlink" title="绑定扩展"></a>绑定扩展</h5><p>有时候我们需要封装一些方法，这些方法可以放在extra目录下，但是还需要绑定，同样的，在public/index.php中增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;EXTEND_PATH&apos;,&apos;../extend/&apos;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="绑定扩展"><a href="#绑定扩展" class="headerlink" title="绑定扩展"></a>绑定扩展</h4><p>有时候我们需要封装一些方法，这些方法可以放在extra目录下，但是还需要绑定，同样的，在public/index.php中增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;EXTEND_PATH&apos;,&apos;../extend/&apos;);</span><br></pre></td></tr></table></figure></p>
 <p>然后就可以定义我们自己的类，使用时</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use extend下的目录名\类名</span><br></pre></td></tr></table></figure>
 <p>这样就可以了</p>
@@ -473,7 +473,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#开启错误信息，调试模式"><span class="nav-number">1.</span> <span class="nav-text">开启错误信息，调试模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绑定模块"><span class="nav-number">2.</span> <span class="nav-text">绑定模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绑定扩展"><span class="nav-number">3.</span> <span class="nav-text">绑定扩展</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#开启错误信息，调试模式"><span class="nav-number">1.</span> <span class="nav-text">开启错误信息，调试模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定模块"><span class="nav-number">2.</span> <span class="nav-text">绑定模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定扩展"><span class="nav-number">3.</span> <span class="nav-text">绑定扩展</span></a></li></ol></div>
             
 
           </div>
